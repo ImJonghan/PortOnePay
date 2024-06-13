@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.portone.io/v2/browser-sdk.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <button onclick="requestPay()">정기결제 등록</button>
+    <script>
+        async function requestPay(){
+                const response = await PortOne.requestPayment({
+                // Store ID 설정
+                storeId: "",
+                // 채널 키 설정
+                channelKey: "",
+                paymentId: `payment-${crypto.randomUUID()}`,
+                orderName: "나이키 와플 트레이너 2 SD",
+                totalAmount: 1000,
+                currency: "CURRENCY_KRW",
+                payMethod: "EASY_PAY",
+            });
+            console.log(response); // 결과 확인을 위해 콘솔에 출력
+        }
+
+    
+    </script>
+</body>
+</html>
