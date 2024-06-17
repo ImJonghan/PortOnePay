@@ -12,8 +12,8 @@
     <script>
         async function requestPay() {
     const issueResponse = await PortOne.requestIssueBillingKey({
-        storeId: "",
-        channelKey: "",
+        storeId: "{{storeId}}",
+        channelKey: "{{channelKey}}",
         billingKeyMethod: "EASY_PAY",
         issueName: "check"
     });
@@ -43,9 +43,7 @@
     } catch (error) {
         console.error(`Failed to send billing key: ${error.message}`);
     }
-}
-
-    
+}    
     </script>
 </body>
 </html>
