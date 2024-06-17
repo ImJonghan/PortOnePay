@@ -4,6 +4,12 @@ from django.views.decorators.csrf import csrf_exempt
 import os
 import dotenv
 
+""" .env file
+storeId=
+channelKey=
+billing_key=
+PORTONE_API_KEY= #portone v2 api key
+"""
 dotenv.load_dotenv()
 # Create your views here.
 @csrf_exempt
